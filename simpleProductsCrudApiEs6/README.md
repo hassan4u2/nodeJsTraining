@@ -40,7 +40,7 @@ This is an API that manages a database of users, categories and products. The da
             
         ### update user PUT
             - /users/update/:id
-            - data : {email, name, password}
+            - data : {"email":"", "name":"", "password":""}
 
         ### delete user DELETE
             - /users/delete/:id
@@ -56,7 +56,7 @@ This is an API that manages a database of users, categories and products. The da
         
         ### update category PUT
             - /categories/update/:id
-            - data : {name, createdBy}
+            - data : {"name":"", "createdBy":1}
 
         ### delete category DELETE
             - /categories/delete/:id
@@ -64,7 +64,7 @@ This is an API that manages a database of users, categories and products. The da
     ## PRODUCT ROUTES
         ### add product POST
             - /products/add
-            - data : {name, description, price, category, createdBy}
+            - data : {"name":"", "description":"", "price":"", "category_id":"", "createdBy":""}
 
         ### get all products GET
             - /products
