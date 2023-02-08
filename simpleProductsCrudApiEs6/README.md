@@ -1,4 +1,8 @@
 ## NodeJs CRUD & Mysql
+This is an API that manages a database of users, categories and products. The database contains three tables: USERS, CATEGORIES and PRODUCTS. The USERS table contains information about users such as their id, email, name and password. The CATEGORIES table contains information about categories such as their id, name and the user who created them. The PRODUCTS table contains information about products such as their id, name, description, price, the category they belong to, and the user who created them. The API provides various routes for adding, retrieving, updating and deleting data from the USERS, CATEGORIES and PRODUCTS tables.
+
+
+
 
 # DB Tables
     ## USERS TABLE
