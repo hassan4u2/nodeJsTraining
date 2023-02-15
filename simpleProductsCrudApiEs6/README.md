@@ -29,7 +29,7 @@ This is an API that manages a database of users, categories, and products. The d
 
 ##### add user - POST
 - /users/add
-- data: { email, name, password }
+- data: { "email": "", "name": "", "password": "" }
 
 ##### get all users - GET
 - /users
