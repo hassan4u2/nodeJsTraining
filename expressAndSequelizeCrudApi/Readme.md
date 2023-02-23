@@ -1,4 +1,4 @@
-# Assignment 5
+# A5
 
 ## Objectives
 - Create two tables using Sequelize and Express
