@@ -22,21 +22,20 @@
 | createdby | string |
 
 ## User APIs
-### 1. Sign up, Login
-### 2. Update User
-### 3. Delete User
-### 4. Search for users where their name starts with "A" and age is less than 30
-Uses "like" for characters.
-### 5. Search for users by a list of IDs
-### 6. Get all users
-### 7. Get all users with products
+1. Sign up, Login
+2. Update User
+3. Delete User
+4. Search for users where their name starts with "A" and age is less than 30 Uses "like" for characters.
+5. Search for users by a list of IDs
+6. Get all users
+7. Get all users with products
 
 ## Product APIs
-### 1. Add Product
-### 2. Delete Product (only allowed for the product owner)
-### 3. Update Product (only allowed for the product owner)
-### 4. Get all Products
-### 5. Search for products where the price is greater than 3000
+1. Add Product
+2. Delete Product (only allowed for the product owner)
+3. Update Product (only allowed for the product owner)
+4. Get all Products
+5. Search for products where the price is greater than 3000
 
 ## Notes
 1. If a user tries to sign up with an email that already exists in the database, a message should appear saying "email already exists" and the user should not be added.
