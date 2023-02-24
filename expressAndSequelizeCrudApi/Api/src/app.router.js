@@ -12,7 +12,7 @@ const initApp = (app, express) => {
     // Convert Buffer to JSON
     app.use(express.json())
     // App Routing  
-    app.get('/', (req, res) => res.send('Hello World!'))
+    app.get('/', (req, res) => res.json({ message: 'ApiHomePage' }))
     app.use('/user', userRouter)
     app.use('/product', productRouter)
     app.use('/auth', authRouter)

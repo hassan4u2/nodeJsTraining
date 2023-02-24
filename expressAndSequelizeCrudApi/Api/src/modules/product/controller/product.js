@@ -1,11 +1,11 @@
 
 
-const productHomeController = (req, res) => {
+const productHome = (req, res) => {
     res.json({ message: 'ProductModule' })
 }
 
 
 
 export {
-    productHomeController
+    productHome
 }
