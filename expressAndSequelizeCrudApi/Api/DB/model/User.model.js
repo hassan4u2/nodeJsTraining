@@ -7,9 +7,8 @@ const userModel = SeqObj.define('User', {
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
     },
     name: {
         type: DataTypes.STRING,
@@ -38,6 +37,7 @@ const userModel = SeqObj.define('User', {
     {
         // If don't want createdAt and updatedAt
         // timestamps: false
+
     }
 )
 

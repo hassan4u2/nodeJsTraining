@@ -1,7 +1,7 @@
 
 
-const productHome = (req, res) => {
-    res.json({ message: 'ProductModule' })
+const productHome = (req, res, next) => {
+    return res.json({ message: 'ProductModule' })
 }
 
 

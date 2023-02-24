@@ -1,14 +1,14 @@
 import { userModel } from '../../../../DB/model/User.model.js'
 
 const authHome = (req, res, next) => {
-    res.json({ message: 'AuthModule' })
+    return res.json({ message: 'AuthModule' })
 }
 
 const signUp = async (req, res, next) => {
     /*
     // url: http://localhost:5100/auth/signup
     //data example : 
-    {
+    {   
         "email": "email@email.com", 
         "password": "password123", 
         "name": 'nameas', 
@@ -27,16 +27,15 @@ const signUp = async (req, res, next) => {
                 // if i want store only some fields
                 fields: ['email', 'password', 'name', 'age']
             })
-            res.json({ message: 'User Created', user })
+            return res.json({ message: 'User Created', user })
         } catch (error) {
             if (error.original?.errno == 1062) {
-                return res.json({
-                    message: 'signUp Catch Error',
-                    error: 'Email Already Exists'
+                return res.status(400).json({
+                    message: 'Email Already Exists'
                 })
             } else {
-                return res.json({
-                    message: 'signUp Catch Error',
+                return res.status(500).json({
+                    message: 'signUp Server Error',
                     error: error.stack
                 })
             }
@@ -61,25 +60,27 @@ const login = async (req, res, next) => {
         try {
             // check if the user exist by method findOne 
             const checkUser = await userModel.findOne({
+                attributes: ['password', 'name', 'age'],
                 where: {
                     email: email
                 }
             })
             if (!checkUser) {
                 return res.status(400).json({
-                    message: 'User Does Not Exist'
+                    message: 'Email or Password is incorrect'
                 })
             } else if (checkUser.password !== password) {
                 return res.status(400).json({
-                    message: 'Password is Incorrect'
+                    // avoid brute force
+                    message: 'Email or Password is incorrect'
                 })
-            } else if (checkUser.password == password && checkUser.email == email) {
-                res.json({ message: 'User Logged In', checkUser })
+            } else if (checkUser.password === password) {
+                return res.json({ message: 'User Logged In', checkUser })
             }
 
         } catch (error) {
-            res.json({
-                message: 'login Catch Error',
+            return res.status(500).json({
+                message: 'login Server Error',
                 error: error.stack
             })
         }

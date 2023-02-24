@@ -12,13 +12,13 @@ const initApp = (app, express) => {
     // Convert Buffer to JSON
     app.use(express.json())
     // App Routing  
-    app.get('/', (req, res) => res.json({ message: 'ApiHomePage' }))
+    app.get('/', (req, res, next) => res.json({ message: 'ApiHomePage' }))
     app.use('/user', userRouter)
     app.use('/product', productRouter)
     app.use('/auth', authRouter)
     //Errors Handling
-    app.use("*", (req, res) => {
-        res.status(404).json({ message: '404 Not Found' })
+    app.use("*", (req, res, next) => {
+        return res.status(404).json({ message: '404 Not Found' })
     })
 
 }
