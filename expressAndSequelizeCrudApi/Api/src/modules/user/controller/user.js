@@ -1,11 +1,15 @@
+import { Op } from 'sequelize'
 import { userModel } from '../../../../DB/model/User.model.js'
 
-// get all users from user table
 const userHome = async (req, res, next) => {
+    return res.json({ message: 'UserModule' })
+}
+// get all users from user table
+const getAllUsers = async (req, res, next) => {
     try {
         const allUsers = await userModel.findAll({})
         return res.json({
-            message: 'UserHomePage',
+            message: 'Users',
             users: allUsers
         })
     } catch (error) {
@@ -97,8 +101,80 @@ const deleteUserById = async (req, res, next) => {
     }
 
 }
+
+
+// operators
+
+const getUsersStartByConditionA = async (req, res, next) => {
+    try {
+        const users = await userModel.findAll({
+            where: {
+                age: {
+                    [Op.lt]: 30
+                },
+                name: {
+                    [Op.startsWith]: 'A'
+                }
+            }
+        })
+        return res.json({
+            message: 'Users with age less than 30 and name starts with A',
+            users: users
+        })
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Server Error',
+            error: error.stack
+        })
+    }
+}
+
+
+const getUsersByListOfIds = async (req, res, next) => {
+    try {
+        const { ids } = req.query;
+        if (!ids) {
+            return res.status(400).json({
+                message: 'Missing ids parameter'
+            });
+        }
+        const idList = ids.split(',').map(id => parseInt(id));
+        if (idList.some(isNaN)) {
+            return res.status(400).json({
+                message: 'Invalid ids parameter'
+            });
+        }
+        const users = await userModel.findAll({
+            where: {
+                id: {
+                    [Op.in]: idList
+                }
+            }
+        });
+        return res.json({
+            message: 'Users',
+            users: users
+        });
+    } catch (error) {
+        return res.status(500).json({
+            message: 'Server Error',
+            error: error.stack
+        });
+    }
+};
+
+
+const getUserProducts = async (req, res, next) => {
+    // get user products
+    console.log('get user products NOT COMPLETED')
+}
+
 export {
     userHome,
+    getAllUsers,
     updateUserById,
-    deleteUserById
+    deleteUserById,
+    getUsersStartByConditionA,
+    getUsersByListOfIds,
+    getUserProducts
 }

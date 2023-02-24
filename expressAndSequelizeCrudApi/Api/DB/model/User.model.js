@@ -1,5 +1,6 @@
 import { sequelize as SeqObj } from '../dbConnection.js' // from the local file dbConnection.js
 import { Sequelize, DataTypes } from 'sequelize' // from the sequelize package
+import { productModel } from './Product.model.js' // from the local file Product.model.js
 
 // Create a model for the table
 const userModel = SeqObj.define('User', {
@@ -32,15 +33,22 @@ const userModel = SeqObj.define('User', {
         allowNull: false,
         defaultValue: false
     }
-},
-    // Model options
-    {
-        // If don't want createdAt and updatedAt
-        // timestamps: false
-
-    }
+}
 )
 
+
+// relation between user and product
+userModel.hasMany(productModel,
+    {
+        foreignKey: 'createdBy',
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE"
+    })
+productModel.belongsTo(userModel,
+    {
+        foreignKey: 'createdBy',
+    }
+)
 
 export {
     // will use in the user controller
