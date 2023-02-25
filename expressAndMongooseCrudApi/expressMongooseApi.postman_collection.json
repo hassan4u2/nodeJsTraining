@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "2f7b1a1e-c6ee-4e93-864c-2cfe838fb47d",
+		"name": "expressMongooseApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25225258"
+	},
+	"item": [
+		{
+			"name": "UserEndpoint",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "AuthHomePage",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5100/auth/",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cliEmail\":\"e4567@gmail.com\",\n    \"cliPassword\":\"noyan2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5100/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SignUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cliName\": \"hassan\",\n    \"cliEmail\":\"hassan@gmail.com\",\n    \"cliPassword\":\"noyan2\",\n    \"cliAge\": 30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5100/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "CommentHomePage",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5100/comment/",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddComment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n    \"content\": \"c22asdsadgaswdgsadg3\",\n    \"userId\": \"63f95899fcb3744750b99cb0\" \n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5100/comment/add",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommentsWithUsersData",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5100/comment/all",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateCommentByOwner",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n    \"content\": \"updated11111\",\n    \"userId\": \"63f963e22423af47c8971d6e\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5100/comment/update/63f963e22423af47c8971d6e",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										"update",
+										"63f963e22423af47c8971d6e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteCommentByOwner",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userId\":\"63f95899fcb3744750b99cb0\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5100/comment/delete/63f95a8d2ef44b49bc071b4e",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										"delete",
+										"63f95a8d2ef44b49bc071b4e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCommentById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:5100/comment/63f958e5fcb3744750b99cc0",
+									"host": [
+										"localhost"
+									],
+									"port": "5100",
+									"path": [
+										"comment",
+										"63f958e5fcb3744750b99cc0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserHomePage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"hassanahmed@gmail.com\",\n    \"name\" : \"hassan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5100/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/all",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404NotFound",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/404000/",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"404000",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/delete/63f93876be0d0096b3800c40",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"delete",
+								"63f93876be0d0096b3800c40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cliName\": \"updated 1\",\n    \"cliEmail\":\"updated@gmail.com\",\n    \"cliPassword\":\"noyan2\",\n    \"cliAge\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5100/user/update/63f939666efe439bd73031d6",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"update",
+								"63f939666efe439bd73031d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_user_bry_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/63f95892fcb3744750b99cac",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"63f95892fcb3744750b99cac"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_st_x_lt_y",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/search_st_x_lt_y/h/35",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"search_st_x_lt_y",
+								"h",
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_end_x",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/search_end_x/n",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"search_end_x",
+								"n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_contains_x",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/search_contains_x/hass",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"search_contains_x",
+								"hass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_full_match",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/search_full_match/hassan",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"search_full_match",
+								"hassan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_age_between_20_50",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5100/user/get/search_age_between_20_50/20/50",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"user",
+								"get",
+								"search_age_between_20_50",
+								"20",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
