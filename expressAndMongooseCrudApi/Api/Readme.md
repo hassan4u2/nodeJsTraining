@@ -171,7 +171,7 @@ Sample request body:
 }
 
 
-- **search_user_bry_id**
+- **search_user_by_id**
 
 `GET /user/get/:id`
 
@@ -179,8 +179,36 @@ This endpoint returns a user by ID.
 
 - **search_st_x_lt_y**
 
-`GET /user/get/search_st_x_lt_y/:str/:x`
+`GET /user/get/search_st_x_lt_y/:stw/:age`
 
 This endpoint returns all users whose field (name or email) starts with a given string and whose age is less than a given value.
 
-- **
+- **delete_user_by_id**
+`DELETE /user/delete/:id`
+
+This endpoint deletes a user by ID.
+
+- **update_user_by_id**
+`PUT /user/update/:id`
+
+This endpoint updates a user by ID.
+
+- **search_end_x**
+`GET /user/get/search_end_x/:endw`
+
+This endpoint returns all users whose field (name or email) ends with a given string.
+
+- **search_contains_x**
+`GET /user/get/search_contains_x/:str`
+
+This endpoint returns all users whose field (name or email) contains a given string.
+
+- **search_full_match**
+`GET /user/get/search_full_match/:str`
+
+This endpoint returns all users whose field (name or email) is an exact match to a given string.
+
+- **search_age_between_x_y**
+`GET /user/get/search_age_between_x_y/:x/:y`
+
+This endpoint returns all users whose age is between two given values.
