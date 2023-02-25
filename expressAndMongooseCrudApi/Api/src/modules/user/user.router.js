@@ -8,18 +8,14 @@ const router = Router();
 
 router.get('/', userController.homePage);
 router.get('/all', userController.getAllUsers);
-
-// delete & update routes
 router.delete('/delete/:id', deleteUser);
 router.put('/update/:id', updateUser);
-// get users with name start with x with age less than y
-// get users with name end with x
-// get users with name contains x
-// get users with name fully match the name variable which destructed from body
-// get users with age between 20 and 50
-// get user by id
-// getters
-
+router.get('/get/:id', userController.getUserById);
+router.get('/get/search_st_x_lt_y/:stw/:age', userController.getUsersWithNameStartsWithXAndAgeLessThanY);
+router.get('/get/search_end_x/:endw', userController.getUsersWithNameEndsWithX);
+router.get('/get/search_contains_x/:cont', userController.getUsersWithNameContainsX);
+router.get('/get/search_full_match/:match', userController.getMatchedUsers);
+router.get('/get/search_age_between_20_50/:min/:max', userController.getUsersWithAgeBetween20And50);
 
 export {
     router
