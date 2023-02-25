@@ -1,7 +1,7 @@
-## Assignment 6:
+## A6:
 - using mongoose & express
 - create user model (name, email, age, password, createdAt, updatedAt)
-## User APIs=>
+## User APIs:
 1. sign up
 2. sign in
 3. update user
