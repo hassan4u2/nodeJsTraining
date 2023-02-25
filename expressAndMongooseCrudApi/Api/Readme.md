@@ -33,10 +33,10 @@ The API stores data in a MongoDB database using Mongoose.
 
   Sample request body:
 
-```{
+{
 "cliEmail": "e4567@gmail.com",
 "cliPassword": "noyan2"
-}```
+}
 
 
 
@@ -48,14 +48,14 @@ This endpoint creates a new user.
 
 Sample request body:
 
-```
+
 {
 "cliName": "hassan",
 "cliEmail": "hassan@gmail.com",
 "cliPassword": "noyan2",
 "cliAge": 30
 }
-```
+
 
 
 
@@ -76,12 +76,12 @@ This endpoint adds a new comment.
 Sample request body:
 
 
-```
+
 {
 "content": "c22asdsadgaswdgsadg3",
 "userId": "63f95899fcb3744750b99cb0"
 }
-```
+
 
 - **GetCommentsWithUsersData**
 
@@ -99,12 +99,12 @@ Sample request body:
 
 
 
-```
+
 {
 "content": "updated11111",
 "userId": "63f963e22423af47c8971d6e"
 }
-```
+
 
 - **DeleteCommentByOwner**
 
@@ -116,13 +116,13 @@ Sample request body:
 
 
 
-```
+
 {
 "userId": "63f95899fcb3744750b99cb0"
 }
 
 
-```
+
 
 
 
@@ -162,14 +162,14 @@ Sample request body:
 
 
 
-```
+
 {
 "cliName": "updated 1",
 "cliEmail": "updated@gmail.com",
 "cliPassword": "noyan2",
 "cliAge": 20
 }
-```
+
 
 - **search_user_bry_id**
 
